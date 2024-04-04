@@ -73,6 +73,9 @@ def result(board, action):
 
 
 def check_horizontal(board, player):
+    """
+    Checks for matches horizontally
+    """
     for row in board:
         if all(cell == player for cell in row):
             return True
@@ -80,6 +83,9 @@ def check_horizontal(board, player):
 
 
 def check_vertical(board, player):
+    """
+    Checks for matches vertically
+    """
     for col in range(len(board[0])):
         if all(board[row][col] == player for row in range(len(board))):
             return True
@@ -87,6 +93,9 @@ def check_vertical(board, player):
 
 
 def check_diagonal(board, player):
+    """
+    Checks for matches diagonally
+    """
     diag1 = all(board[i][i] == player for i in range(len(board)))
     diag2 = all(board[i][len(board) - 1 - i] == player for i in range(len(board)))
     return diag1 or diag2
@@ -161,7 +170,6 @@ def minvalue(board):
     """
     Returns the minimum value
     """
-
     if terminal(board):
         return utility(board)
 
@@ -176,7 +184,6 @@ def maxvalue(board):
     """
     Returns the maximum value
     """
-
     if terminal(board):
         return utility(board)
 
