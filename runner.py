@@ -5,7 +5,7 @@ import cv2
 import tictactoe as ttt
 
 pygame.init()
-size = width, height = 1920, 1080
+size = width, height = 1280, 720
 
 # Colors
 black = (0, 0, 0)
@@ -40,7 +40,7 @@ playX_img = pygame.transform.scale(playX_img, (playX_img.get_width() // 2, playX
 playO_img = pygame.transform.scale(playO_img, (playO_img.get_width() // 2, playO_img.get_height() // 2))
 
 replay = pygame.image.load('assets/replay.png')
-replay = pygame.transform.scale(replay, (replay.get_width() // 2, replay.get_height() // 2))
+replay = pygame.transform.scale(replay, (replay.get_width() // 3, replay.get_height() // 3))
 
 user = None
 board = ttt.initial_state()
@@ -130,7 +130,7 @@ while running:
         screen.fill((0, 0, 0))
         screen.blit(frame_pygame, (0, 0))
 
-        clock.tick(30)
+        clock.tick(60)
     else:
         # Rewind the video to the beginning
         cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
@@ -139,7 +139,6 @@ while running:
 
     # Let user choose a player.
     if user is None:
-
         playXButton = playX_img.get_rect(center=(width // 3, height // 1.8))
         playOButton = playO_img.get_rect(center=(2.7 * width // 4, height // 1.8))
         screen.blit(playX_img, playXButton)
@@ -159,7 +158,6 @@ while running:
                 user = ttt.O
 
     else:
-
         play_game_music()
 
         player = ttt.player(board)
@@ -201,7 +199,7 @@ while running:
             title = f"Computer thinking..."
         title = pixelfont.render(title, True, white)
         titleRect = title.get_rect()
-        titleRect.center = ((width / 2), 200)
+        titleRect.center = ((width / 2), 50)
         screen.blit(title, titleRect)
 
         # Check for AI move
@@ -225,7 +223,7 @@ while running:
                         play_sound('assets/placesound.mp3')
 
         if game_over:
-            replay_button = playO_img.get_rect(center=(width // 2, 900))
+            replay_button = playO_img.get_rect(center=(width // 2 + 40, 700))
             screen.blit(replay, replay_button)
             click, _, _ = pygame.mouse.get_pressed()
             if click == 1:

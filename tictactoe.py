@@ -46,6 +46,7 @@ def actions(board):
         return set()
 
     actions = set()
+
     for i in range(len(board)):
         for j in range(len(board[0])):
             if board[i][j] is None:
