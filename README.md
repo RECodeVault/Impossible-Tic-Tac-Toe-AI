@@ -1,5 +1,4 @@
 # Unbeatable Tic Tac Toe AI (With explanation)
-## [Only available on desktop 1920 X 1080 resolution]
 
 This project presents an unbeatable Tic Tac Toe AI implementation utilizing the powerful Minimax algorithm. Tic Tac Toe, also known as Noughts and Crosses, is a classic game that involves two players alternately placing their marks (X or O) on a 3x3 grid. The objective is to be the first to form a horizontal, vertical, or diagonal line of three marks.
 
@@ -24,6 +23,9 @@ This project presents an unbeatable Tic Tac Toe AI implementation utilizing the 
     ```bash
     python runner.py
     ```
+
+## Example of running program:
+![Running program](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWN6ZzE4dmxxYTdtamhoZDA5eThzNnRxbjh0eGo4bGI5ZTg2a25jdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6FaLCPjL2Dj93cb96t/giphy.gif)
 
 ## Explanation of Minimax Algorithm
 
